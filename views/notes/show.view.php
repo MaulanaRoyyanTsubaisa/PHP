@@ -7,6 +7,14 @@
             <a href="/notes">Go Back</a>
         </p>
         <p> <?= htmlspecialchars($note['body']) ?></p>
+        <form class="mt-4" method="POST">
+            <input type="hidden" name="_method" value="DELETE">
+            <input type="hidden" name="id" value="<?= $note['id'] ?>">
+            <button class="text-sm text-red-500" type="submit">delete</button>
+
+            <a href="/note/edit?id=<?= $note['id'] ?>" class="text-blue-500 hover:underline">edit</a>
+            <!-- <button class="text-sm text-blue-500">edit</button> -->
+        </form>
     </div>
 </main>
 <?php require base_path('views/partials/footer.php') ?>
