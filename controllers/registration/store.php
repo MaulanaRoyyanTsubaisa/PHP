@@ -36,7 +36,7 @@ if ($user) {
 } else {
     $db->query('insert into users (email, password) values (:email, :password)', [
         'email' => $email,
-        'password' => password_hash($password, PASSWORD_DEFAULT)
+        'password' => password_hash($password, PASSWORD_BCRYPT)
     ]);
 
 }
