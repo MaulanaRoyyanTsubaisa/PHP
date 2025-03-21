@@ -1,6 +1,8 @@
 #include <iostream>
 
 int main() {
-    std::cout << "Instalasi C++ Berhasil!" << std::endl;
-    return 0;
+
+    int a = 5, b = 7;
+
+    printf(a > b);
 }
