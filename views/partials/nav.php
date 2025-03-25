@@ -56,10 +56,16 @@
                         </div>
                     </div>
 
-                    <div class="ml-3">
-                        <a href="/logout"
-                            class="<?= urlIs('/login') ? 'bg-gray-900 text-white' : 'text-gray-300' ?> hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Log Out</a>
-                    </div>
+                    <?php if ($_SESSION['user'] ?? false): ?>
+                        <div class="ml-3">
+                            <form action="/session" method="POST">
+                                <input type="hidden" name="_method" value="DELETE">
+                                <button class="text-white" type="submit">Log Out</button>
+                            </form>
+                        </div>
+                    <?php endif; ?>
+
+
                 </div>
             </div>
             <div class="-mr-2 flex md:hidden">

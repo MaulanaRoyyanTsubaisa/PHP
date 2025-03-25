@@ -1,16 +1,25 @@
 #include <iostream>
 using namespace std;
-void tabelPerkalian(int n) {
-    for (int i = 1; i <= 10; i++ ) {
-        cout << n << "x" << i << " = " << n * i << endl;
-    }
+int main() {
+    string arr[] = {"apel", "jeruk", "mangga", "pisang"};
+    int n = sizeof(arr) / sizeof(arr[0]);
+    string target;
+    int found = -1;
+
+    cout << "Masukan nama buah yng ingin dicari ";
+    cin >> target;
+
+    for (int i = 0; i < n; i++) {
+        if (arr[i] == target ){
+            found = i;
+            break;
+        }
     }
 
-    int main () {
-        int angka;
-        cout << " masukan angka: ";
-        cin >> angka;
-
-        tabelPerkalian(angka);
-        return 0;
+    if (found != -1)
+    {
+        cout << "Nama buah ditemukan di indeks ke - " << found << endl;
     }
+    return 0;
+    
+}
